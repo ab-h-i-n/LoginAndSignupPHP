@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: burlywood;
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: rgb(255, 219, 172);
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout {
+  background-color: rgb(233, 155, 52);
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  width: 50px;
+  aspect-ratio: 1;
+  font-weight: bold;
+}
+
+.logout:hover {
+  background-color: rgb(190, 132, 55);
+}
+
+header .right {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.useremail {
+  font-size: 1rem;
+}

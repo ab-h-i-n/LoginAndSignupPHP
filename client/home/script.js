@@ -17,6 +17,7 @@ const getUserDetails = () => {
         } else {
           console.log(json.data);
           document.querySelector(".username").innerHTML = json.data.name;
+          document.querySelector(".useremail").innerHTML = json.data.email;
         }
       })
       .catch((err) => {
@@ -26,7 +27,7 @@ const getUserDetails = () => {
 
 
 if (!user) {
-  window.location.href = "./auth/login";
+  window.location.href = "../auth/login";
 } else {
   getUserDetails();
 }
@@ -34,5 +35,5 @@ if (!user) {
 
 logoutBTN.addEventListener("click", () => {
   localStorage.removeItem("user");
-  location.href = "./auth/login";
+  location.href = "../auth/login";
 });

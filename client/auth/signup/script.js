@@ -23,7 +23,14 @@ form.addEventListener("submit", (e) => {
       } else if (json.status == 500) {
         throw new Error(json.message);
       } else {
-        location.href = "../login"; // redirect to login page
+
+        alert(json.message + " Redirecting to login page...");
+
+        // redirect to login page
+        setTimeout(() => {
+          location.href = "../login"; //redirect after 1 second
+        }, 1000);
+
       }
     })
     .catch((err) => {

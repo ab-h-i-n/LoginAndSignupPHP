@@ -22,7 +22,7 @@ form.addEventListener("submit", (e) => {
         throw new Error(json.message);
       } else {
         localStorage.setItem("user", json.data.id);
-        location.href = "../../"; // home page
+        location.href = "../../home/"; // home page
       }
     })
     .catch((err) => {

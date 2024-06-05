@@ -3,19 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <title>Login</title>
   </head>
   <body>
     <form>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required />
-      <br />
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" required />
-      <br />
+
+      <h1>Login</h1>
+
+      <div class="input-grp">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+      </div>
+
+      <div class="input-grp">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+      </div>
+
       <button type="submit">Login</button>
-      <br />
+
       <a href="../signup">Sign Up</a>
     </form>
     <script src="./script.js"></script>

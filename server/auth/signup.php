@@ -1,8 +1,8 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+require ("../connect/connect.php");
 
-    require ("../connect/connect.php");
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $request = file_get_contents('php://input');
     $body = json_decode($request, true);
@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         echo json_encode(['status' => 404, 'message' => 'Email already registered']);
-        $dbcon->close();
         exit();
     }
 
@@ -29,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo json_encode(['status' => 404, 'message' => 'User creation failed']);
     }
 
-    $dbcon->close();
-
 } else {
     echo json_encode(['status' => 500, 'message' => 'Invalid request method']);
 }
+
+$dbcon->close();

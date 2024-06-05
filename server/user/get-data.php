@@ -1,8 +1,8 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+require ("../connect/connect.php");
 
-    require ("../connect/connect.php");
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     $headers = getallheaders();
 
@@ -32,9 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         echo json_encode(['status' => 404, 'message' => 'Authorization header not found']);
     }
 
-    $dbcon->close();
-
 } else {
     echo json_encode(['status' => 500, 'message' => 'Invalid request method']);
 }
 
+
+
+$dbcon->close();

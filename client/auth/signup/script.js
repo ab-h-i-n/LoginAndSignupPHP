@@ -12,7 +12,7 @@ form.addEventListener("submit", (e) => {
     password: password.value,
   };
 
-  fetch("/TodoPHP/server/auth/signup.php", {
+  fetch("http://localhost/TodoPHP/server/auth/signup.php", {
     method: "POST",
     body: JSON.stringify(formData),
   })
@@ -35,5 +35,6 @@ form.addEventListener("submit", (e) => {
     })
     .catch((err) => {
       console.error(err);
+      alert("Something went wrong!");
     });
 });

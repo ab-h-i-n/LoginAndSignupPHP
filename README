@@ -1,9 +1,5 @@
 database name = mydb
 
-table name = users
-
-
-create table query =
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -13,11 +9,13 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `todo` (
-  `id` int(11) NOT NULL,
-  `text` text NOT NULL,
-  `isComplete` tinyint(1) NOT NULL DEFAULT 0,
-  `createdAt` int(11) NOT NULL DEFAULT current_timestamp()
-);
+CREATE TABLE `tasks` (
+  `task_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`task_id`)
+) 
 
 MAIN FOLDER NAME = TodoPHP

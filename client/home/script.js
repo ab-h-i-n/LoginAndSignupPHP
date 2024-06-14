@@ -49,6 +49,7 @@ const getTasks = () => {
         json.data.forEach((task) => {
           const taskDiv = document.createElement("div");
           taskDiv.classList.add("task");
+          taskDiv.id = task.id;
           taskDiv.innerHTML = `
             <span class="task-title">${task.title}</span>
           <p class="task-desc">${task.description}</p>`;

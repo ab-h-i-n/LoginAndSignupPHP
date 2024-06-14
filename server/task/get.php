@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
             while ($allData = mysqli_fetch_assoc($result)) {
                 $data[] = [
+                    'id'=> $allData['task_id'],
                     'title' => $allData['title'],
                     'description' => $allData['description'],
                     'status' => $allData['status'],

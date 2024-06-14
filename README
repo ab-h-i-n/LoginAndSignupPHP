@@ -13,4 +13,11 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 );
 
-MAIN FOLDER NAME = LoginAndSignupPHP
+CREATE TABLE `todo` (
+  `id` int(11) NOT NULL,
+  `text` text NOT NULL,
+  `isComplete` tinyint(1) NOT NULL DEFAULT 0,
+  `createdAt` int(11) NOT NULL DEFAULT current_timestamp()
+);
+
+MAIN FOLDER NAME = TodoPHP

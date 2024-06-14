@@ -10,12 +10,13 @@ form.addEventListener("submit", (e) => {
     password: password.value,
   };
 
-  fetch("http://localhost/LoginAndSignupPHP/server/auth/login.php", {
+  fetch("/TodoPHP/server/auth/login.php", {
     method: "POST",
     body: JSON.stringify(formData),
   })
     .then((res) => res.json())
     .then((json) => {
+      console.log(json);
       if (json.status == 404) {
         alert(json.message);
       } else if (json.status == 500) {

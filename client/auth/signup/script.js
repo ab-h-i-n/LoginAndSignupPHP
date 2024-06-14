@@ -12,7 +12,7 @@ form.addEventListener("submit", (e) => {
     password: password.value,
   };
 
-  fetch("http://localhost/LoginAndSignupPHP/server/auth/signup.php", {
+  fetch("/TodoPHP/server/auth/signup.php", {
     method: "POST",
     body: JSON.stringify(formData),
   })

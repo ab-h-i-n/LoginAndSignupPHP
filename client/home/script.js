@@ -2,7 +2,7 @@ const user = window.localStorage.getItem("user");
 const logoutBTN = document.querySelector(".logout");
 
 const getUserDetails = () => {
-    fetch("http://localhost/LoginAndSignupPHP/server/user/get-data.php", {
+    fetch("/TodoPHP/server/user/get-data.php", {
       method: "GET",
       headers: {
         Authorization: user,

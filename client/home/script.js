@@ -37,17 +37,20 @@ const getTasks = () => {
     .then((res) => res.json())
     .then((json) => {
       if (json.status == 404) {
-        alert(json.message);
+        const tasks = document.querySelector("main");
+        const noTasks = document.createElement("div");
+        noTasks.innerHTML = `<div class="no-tasks">Add tasks!</div>`;
+        tasks.appendChild(noTasks);
       } else if (json.status == 500) {
         throw new Error(json.message);
       } else {
-        console.log("data" ,json.data);
+        console.log("data", json.data);
         const tasks = document.querySelector(".task-container");
         json.data.forEach((task) => {
           const taskDiv = document.createElement("div");
           taskDiv.classList.add("task");
           taskDiv.innerHTML = `
-            <span class="task-title">Task ${task.title}</span>
+            <span class="task-title">${task.title}</span>
           <p class="task-desc">${task.description}</p>`;
           tasks.appendChild(taskDiv);
         });
@@ -73,13 +76,15 @@ logoutBTN.addEventListener("click", () => {
 
 const addTask = () => {
   const task = document.querySelector(".task-input").value;
+  const taskTitle = document.querySelector(".task-title").value;
 
-  if (!task) {
-    alert("Please enter a task!");
+  if (!task || !taskTitle) {
+    alert("Please enter a task and its title!");
     return;
   }
 
   const tasks = {
+    title: taskTitle,
     user_id: user,
     desc: task,
   };
